@@ -1,0 +1,170 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 2rem 1rem;
+}
+
+/* ===== Layout ===== */
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+#app h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #111;
+}
+
+/* ===== Add Form ===== */
+#add-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#todo-input:focus {
+  border-color: #4a90e2;
+}
+
+#add-form button[type="submit"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+#add-form button[type="submit"]:hover {
+  background-color: #357abd;
+}
+
+#add-form button[type="submit"]:active {
+  background-color: #2a6099;
+}
+
+/* ===== Filter Bar ===== */
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #4a90e2;
+  color: #4a90e2;
+}
+
+/* Requirement 5.5 — visually distinguish the active filter */
+.filter-btn.active {
+  background-color: #4a90e2;
+  border-color: #4a90e2;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== Todo List ===== */
+#todo-list {
+  list-style: none;
+}
+
+/* ===== Todo Item ===== */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.25rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+  accent-color: #4a90e2;
+  flex-shrink: 0;
+}
+
+.todo-item span {
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Requirement 2.3 — visual distinction for completed todos */
+.todo-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo-item button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  background-color: #fff;
+  color: #e05252;
+  border: 1px solid #e05252;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.todo-item button:hover {
+  background-color: #e05252;
+  color: #fff;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+  text-align: center;
+  color: #aaa;
+  padding: 2rem 0;
+  font-style: italic;
+}
